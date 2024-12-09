@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
-    // Menampilkan halaman login
     public function index()
     {
         return view('auth.login');
@@ -56,7 +55,6 @@ class AuthController extends Controller
             return redirect()->intended('/home')->with('status', 'Selamat Datang ' . Auth::user()->name);
         }
 
-        // Gagal login
         return back()->withErrors([
             'email' => 'Email atau password Anda salah.',
         ])->withInput();

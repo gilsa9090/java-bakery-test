@@ -20,8 +20,11 @@ Route::get('/home', function () {
     return view('home/index');
 });
 
-Route::get('/login', [AuthController::class, 'index']);
-Route::post('/login', [AuthController::class, 'login']);
+Route::get('/login', [AuthController::class, 'index'])->middleware('guest');
+Route::post('/login', [AuthController::class, 'login'])->middleware('guest');
 Route::get('/register', [AuthController::class, 'register']);
-Route::resource('/jenis', JenisController::class);
-Route::resource('/product', ProductController::class);
+Route::middleware(['auth'])->group(function () {
+    Route::resource('/jenis', JenisController::class);
+    Route::resource('/product', ProductController::class);
+    Route::get('/login/logout', [AuthController::class, 'logout']);
+});
