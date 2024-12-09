@@ -4,8 +4,9 @@
         <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"></span>Update Product</h4>
         <div class="card mb-4">
             <div class="card-body">
-                <form action="/product" method="post" enctype="multipart/form-data">
+                <form action="/product/{{$product->id}}" method="post" enctype="multipart/form-data">
                     @csrf
+                    @method('put')
                   <div class="mb-3">
                     <label class="form-label" for="fish">Nama Product</label>
                     <input type="text" class="form-control" value="{{$product->product}}" name="product"/>
@@ -15,7 +16,7 @@
                   @enderror
                   <div class="mb-3">
                     <label class="form-label" for="harga">Harga</label>
-                    <input type="text" class="form-control" name="harga"/>
+                    <input type="text" class="form-control" value="{{$product->harga}}" name="harga"/>
                   </div>
                   @error('harga')
                   <div class="alert alert-danger">{{ $message }}</div>
@@ -36,7 +37,7 @@
                   @enderror
                   <div class="mb-3">
                     <label class="form-label" for="image">Stok</label>
-                    <input type="text" name="stok" class="form-control">
+                    <input type="text" name="stok" value="{{$product->stok}}" class="form-control">
                   </div>
                   @error('stok')
                   <div class="alert alert-danger">{{ $message }}</div>

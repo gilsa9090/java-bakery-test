@@ -72,7 +72,7 @@ class ProductController extends Controller
     {
         $product = Product::find($id);
         $jenis = Jenis::all();
-        return view('product.create', ['jenis' => $jenis, 'product' => $product]);
+        return view('product.edit', ['jenis' => $jenis, 'product' => $product]);
     }
 
     /**
