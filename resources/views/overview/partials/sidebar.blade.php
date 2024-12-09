@@ -74,13 +74,13 @@
             <div data-i18n="Analytics">Overviews</div>
           </a>
         </li>
-        <li class="menu-item active">
+        <li class="menu-item">
           <a href="/jenis" class="menu-link">
             <i class="menu-icon tf-icons bx bx-home-circle"></i>
             <div data-i18n="Analytics">Jenis</div>
           </a>
         </li>
-        <li class="menu-item active">
+        <li class="menu-item">
           <a href="/product" class="menu-link">
             <i class="menu-icon tf-icons bx bx-home-circle"></i>
             <div data-i18n="Analytics">Product</div>
